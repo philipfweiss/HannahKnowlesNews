@@ -6,9 +6,15 @@
     </div>
 
     <div>
-        <% @results.items.each do |result| %>
-        <div><%= result.title %></div>
+        <% @merc.each do |merc| %>
+            <div><%= link_to merc.title, merc.link%></div>
         <% end %>
+        <% @daily.each do |daily| %>
+            <div><%= link_to daily.title, daily.link%></div>
+        <% end %>
+
+
+
     </div>
 
 
