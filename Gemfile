@@ -13,6 +13,7 @@ gem 'vertical-timeline-rails'
 gem 'will_paginate'
 gem 'google_custom_search_api'
 gem 'bootstrap-will_paginate'
+gem 'feedjira'
 gem 'bootstrap-sass'
 gem 'jbuilder'
 gem 'web-console', group: :development

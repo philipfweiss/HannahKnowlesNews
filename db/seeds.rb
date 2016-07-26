@@ -40,3 +40,23 @@ end
     )
   end
 end
+
+
+######
+
+@daily = []
+url = "http://www.stanforddaily.com/author/hannah-knowles/feed/"
+feed = Feedjira::Feed.fetch_and_parse url
+feed.entries.each do |entry|
+  if Article.where(:title => entry.title).blank?
+    Article.create!(
+               title: entry.title,
+               content: '',
+               published_date: entry.published.to_date,
+               location: 'daily',
+               link: entry.url
+    )
+
+  end
+
+end

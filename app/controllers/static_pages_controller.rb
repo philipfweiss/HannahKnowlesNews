@@ -1,25 +1,20 @@
 class StaticPagesController < ApplicationController
   def home
 
-    @merc = []
-    Article.where(:location => 'merc').find_each do |item|
-      @merc.push (item)
+
+    @articles = []
+    Article.all.each do |item|
+      @articles.push (item)
     end
-    @merc = @merc.sort_by {|a| a.published_date.to_date}
-    @merc.reverse!
+    @articles = @articles.sort_by {|a| a.published_date.to_date}
+    @articles.reverse!
+    @articles.each do |art|
+      puts art
+    end
+    @articles = @articles.paginate(:page => params[:page], :per_page => 10)
 
 
 
-     @daily = []
-     1.times do |x|
-       daily = GoogleCustomSearchApi.search("Hannah Knowles Stanford Daily", :page => x)
-       daily.items.each do |item|
-         @display = item
-         ### Link: item.link
-
-         @daily.push item
-       end
-     end
   end
 
 

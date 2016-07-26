@@ -1,20 +1,39 @@
 <% provide(:title, 'Home') %>
 <div>
-    <% @merc.each do |merc| %>
-        <%= @display %>
-
-        <%= timeline_container("#{merc.title}", merc.published_date.to_date, 'sanjose.png') do %>
-                        <div>
-                            By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>
-                        </div>
-            <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info' %></h4>
 
 
-                    <div class="padded_san">
-                           <%= image_tag 'sanjose.png'%>
-                       </div>
+        <div class="jumbotron">
+            <div class="jumbotron">
+                <h2>Most Recent Article:</h2>
+                merc.firs
+            </div>
+            <%= will_paginate @articles %>
+
+            <% @articles.each do |merc| %>
+            <% picture = ''%>
+            <% if merc.location == 'merc'%>
+                 <% picture = 'sanjose.png' %>
+            <% end %>
+            <% if merc.location == 'daily'%>
+                 <% picture = 'daily.png' %>
             <% end %>
 
-        <% end%>
-<div>
+            <%= timeline_container("#{merc.title}", merc.published_date.to_date, picture) do %>
+                            <div>
+                                By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>
+                            </div>
+                <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info' %></h4>
+
+
+                        <div class="padded_san">
+                               <%= image_tag "#{picture}", size: '500x200'%>
+                           </div>
+                <% end %>
+
+            <% end%>
+            <%= will_paginate @articles %>
+
+        </div>
+
+    <div>
 

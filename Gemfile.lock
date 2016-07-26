@@ -65,6 +65,15 @@ GEM
     execjs (2.7.0)
     faker (1.6.6)
       i18n (~> 0.5)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
+    feedjira (2.0.0)
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9)
+      loofah (~> 2.0)
+      sax-machine (~> 1.0)
     ffi (1.9.14)
     formatador (0.2.5)
     globalid (0.3.6)
@@ -123,6 +132,7 @@ GEM
       ruby-progressbar
     multi_json (1.12.1)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nenv (0.3.0)
     nio4r (1.2.1)
     nokogiri (1.6.8)
@@ -184,6 +194,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sax-machine (1.3.2)
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
@@ -229,6 +240,7 @@ DEPENDENCIES
   byebug
   coffee-rails
   faker
+  feedjira
   google_custom_search_api
   guard
   guard-minitest
