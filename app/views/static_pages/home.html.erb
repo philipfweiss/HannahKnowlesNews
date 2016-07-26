@@ -5,19 +5,15 @@
         <gcse:search></gcse:search>
     </div>
 
-    <div>
         <% @merc.each do |merc| %>
-            <div><%= link_to merc.title, merc.link%></div>
-        <% end %>
+                <% if !merc.pagemap.nil? && merc.pagemap.metatags[0].has_key?("startdate") %>
+                  <div><%= link_to merc.pagemap.metatags[0]["og:title"], merc.link%></div>
+                    <div>Date: <%= merc.pagemap.metatags[0].startdate.to_date.strftime("%B %d, %Y") %></div>
+                 <% end %>
+            <% end%>
         <% @daily.each do |daily| %>
             <div><%= link_to daily.title, daily.link%></div>
         <% end %>
-
-
-
-    </div>
-
-
 </div>
 
 <script>
