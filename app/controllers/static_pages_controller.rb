@@ -7,8 +7,9 @@ class StaticPagesController < ApplicationController
       @articles.push (item)
     end
     @articles = @articles.sort_by {|a| a.published_date.to_date}
-    @articles.reverse!
 
+    @articles.reverse!
+    HannahMailer.news_email().deliver_now
 
 
 
