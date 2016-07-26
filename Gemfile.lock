@@ -221,6 +221,7 @@ DEPENDENCIES
   jquery-ui-rails
   mini_backtrace
   minitest-reporters
+  nokogiri
   pg
   puma
   rails
