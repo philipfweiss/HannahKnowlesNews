@@ -6,7 +6,9 @@
     </div>
 
     <div>
-        <%= @results %>
+        <% @results.items.each do |result| %>
+        <div><%= result.title %></div>
+        <% end %>
     </div>
 
 

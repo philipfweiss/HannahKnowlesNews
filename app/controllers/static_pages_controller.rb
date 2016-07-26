@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    results = GoogleCustomSearch.search("Hannah Knowles")
-    @results = results.total
+    @results = GoogleCustomSearchApi.search("Hannah Knowles")
   end
 
 
