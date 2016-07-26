@@ -68,7 +68,6 @@ GEM
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    google_custom_search (0.3.1)
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -222,7 +221,6 @@ DEPENDENCIES
   byebug
   coffee-rails
   faker
-  google_custom_search
   guard
   guard-minitest
   jbuilder
@@ -230,6 +228,7 @@ DEPENDENCIES
   jquery-ui-rails
   mini_backtrace
   minitest-reporters
+  nokogiri
   pg
   puma
   rails
