@@ -1,10 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
     require 'open-uri'
-    news_tmp_file = open('https://news.google.com')
-    doc = Nokogiri::HTML(news_tmp_file)
+    tmp = open('https://www.google.com/?gws_rd=ssl#q=hannah+knowles&tbm=nws&tbs=qdr:m')
+    doc = Nokogiri::HTML(tmp)
+    @content = doc
 
-    4.times do puts doc end
   end
 
   def help
