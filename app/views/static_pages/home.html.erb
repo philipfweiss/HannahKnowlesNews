@@ -1,9 +1,25 @@
 <% provide(:title, 'Home') %>
 
 <div class="container">
+    <div class="jumbotron">
+        <gcse:search></gcse:search>
+    </div>
+
     <div>
-      <%= @contents %>
+        <%= @results %>
     </div>
 
 
 </div>
+
+<script>
+    (function() {
+        var cx = '013979428230416450687:bdqpsl7hkxu';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+    })();
+</script>

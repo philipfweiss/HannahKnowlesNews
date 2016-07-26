@@ -38,6 +38,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     ansi (1.5.0)
     arel (7.1.0)
     autoprefixer-rails (6.3.7)
@@ -68,7 +69,9 @@ GEM
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    google_custom_search (0.3.1)
+    google_custom_search_api (2.0.0)
+      addressable
+      httparty
     guard (2.14.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -82,6 +85,8 @@ GEM
     guard-minitest (2.4.5)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -117,6 +122,7 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     multi_json (1.12.1)
+    multi_xml (0.5.5)
     nenv (0.3.0)
     nio4r (1.2.1)
     nokogiri (1.6.8)
@@ -222,7 +228,7 @@ DEPENDENCIES
   byebug
   coffee-rails
   faker
-  google_custom_search
+  google_custom_search_api
   guard
   guard-minitest
   jbuilder
