@@ -7,9 +7,11 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'bootstrap-sass'
 gem 'jbuilder'
 gem 'web-console', group: :development
 gem 'sdoc',         '0.4.0', group: :doc
