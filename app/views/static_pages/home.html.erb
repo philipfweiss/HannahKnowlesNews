@@ -1,10 +1,11 @@
 <% provide(:title, 'Home') %>
 <div>
     <% @merc.each do |merc| %>
+        <%= @display %>
 
-        <%= timeline_container("#{merc.pagemap.metatags[0]["og:title"]}", merc.pagemap.metatags[0].startdate.to_date, 'sanjose.png') do %>
+        <%= timeline_container("#{merc.title}", merc.published_date.to_date, 'sanjose.png') do %>
                         <div>
-                            By Hannah Knowles on <%= merc.pagemap.metatags[0].startdate.to_date.strftime("%B %d, %Y") %>
+                            By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>
                         </div>
             <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info' %></h4>
 

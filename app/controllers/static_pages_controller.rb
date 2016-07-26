@@ -2,24 +2,24 @@ class StaticPagesController < ApplicationController
   def home
 
     @merc = []
-    1.times do |x|
-      merc = GoogleCustomSearchApi.search("Hannah Knowles Mercury News", :page => x )
-      puts merc
-      merc.items.each do |item|
-        if !item.pagemap.nil? && item.pagemap.metatags[0].has_key?("startdate")
-          @merc.push item
-        end
-      end
-
+    Article.where(:location => 'merc').find_each do |item|
+      @merc.push (item)
     end
+    @merc = @merc.sort_by {|a| a.published_date.to_date}
+    @merc.reverse!
+
+
 
      @daily = []
-  #   1.times do |x|
-  #     daily = GoogleCustomSearchApi.search("Hannah Knowles Stanford Daily", :page => x)
-  #     daily.items.each do |item|
-  #       @daily.push item
-  #     end
-  #   end
+     1.times do |x|
+       daily = GoogleCustomSearchApi.search("Hannah Knowles Stanford Daily", :page => x)
+       daily.items.each do |item|
+         @display = item
+         ### Link: item.link
+
+         @daily.push item
+       end
+     end
   end
 
 
