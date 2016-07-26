@@ -4,9 +4,11 @@ class StaticPagesController < ApplicationController
     @merc = []
     1.times do |x|
       merc = GoogleCustomSearchApi.search("Hannah Knowles Mercury News", :page => x )
+      puts merc
       merc.items.each do |item|
-        puts item
-        @merc.push item
+        if !item.pagemap.nil? && item.pagemap.metatags[0].has_key?("startdate")
+          @merc.push item
+        end
       end
 
     end

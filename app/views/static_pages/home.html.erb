@@ -1,29 +1,19 @@
 <% provide(:title, 'Home') %>
+<div>
+    <% @merc.each do |merc| %>
 
-<div class="container">
-    <div class="jumbotron">
-        <gcse:search></gcse:search>
-    </div>
+        <%= timeline_container("#{merc.pagemap.metatags[0]["og:title"]}", merc.pagemap.metatags[0].startdate.to_date, 'sanjose.png') do %>
+                        <div>
+                            By Hannah Knowles on <%= merc.pagemap.metatags[0].startdate.to_date.strftime("%B %d, %Y") %>
+                        </div>
+            <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info' %></h4>
 
-        <% @merc.each do |merc| %>
-                <% if !merc.pagemap.nil? && merc.pagemap.metatags[0].has_key?("startdate") %>
-                  <div><%= link_to merc.pagemap.metatags[0]["og:title"], merc.link%></div>
-                    <div>Date: <%= merc.pagemap.metatags[0].startdate.to_date.strftime("%B %d, %Y") %></div>
-                 <% end %>
-            <% end%>
-        <% @daily.each do |daily| %>
-            <div><%= link_to daily.title, daily.link%></div>
-        <% end %>
-</div>
 
-<script>
-    (function() {
-        var cx = '013979428230416450687:bdqpsl7hkxu';
-        var gcse = document.createElement('script');
-        gcse.type = 'text/javascript';
-        gcse.async = true;
-        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(gcse, s);
-    })();
-</script>
+                    <div class="padded_san">
+                           <%= image_tag 'sanjose.png'%>
+                       </div>
+            <% end %>
+
+        <% end%>
+<div>
+

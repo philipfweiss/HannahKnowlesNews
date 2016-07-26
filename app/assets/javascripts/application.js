@@ -14,5 +14,6 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require jquery-ui
+//= require vertical-timeline
 //= require turbolinks
 //= require_tree .

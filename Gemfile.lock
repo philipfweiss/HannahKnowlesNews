@@ -208,6 +208,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    vertical-timeline-rails (0.1.0)
     web-console (3.3.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -246,6 +247,7 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier
+  vertical-timeline-rails
   web-console
   will_paginate
 

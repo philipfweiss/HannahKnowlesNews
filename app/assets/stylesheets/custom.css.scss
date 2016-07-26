@@ -216,6 +216,24 @@ body {
 }
 
 .navbar {
-  background-color: white;
+  background-color: white !important;
+  height: 20px !important;
   border-bottom: 1px solid black;
+}
+
+h2 {
+  font-size: 22px !important;
+}
+
+.cd-picture {
+  background-color: #d9d9d9 !important;
+}
+
+.padded_san {
+  padding: 10px;
+  margin-top: 10px !important;
+}
+
+.padded_bot {
+  text-align: center;
 }
