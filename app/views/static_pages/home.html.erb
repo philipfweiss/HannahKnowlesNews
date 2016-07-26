@@ -1,39 +1,90 @@
 <% provide(:title, 'Home') %>
 <div>
 
+        <div class="jumbotron" style="background-color: #b3e9ff; border: 2px solid black">
 
-        <div class="jumbotron">
-            <div class="jumbotron">
-                <h2>Most Recent Article:</h2>
-                merc.firs
+
+            <% a = @articles.shift %>
+
+            <% location = ''%>
+            <% picture = ''%>
+
+            <% if a.location == 'merc'%>
+                <% picture = 'sanjose.png' %>
+                <% location = 'The Mercury News' %>
+
+        <% end %>
+            <% if a.location == 'daily'%>
+                <% picture = 'daily.png' %>
+                <% location = 'The Stanford Daily' %>
+
+        <% end %>
+
+            <div class="wrapper" style="width: 800px; height: 300px; position: relative !important;">
+                <div class="jumbotron" style="border: 2px solid black; background-color: #fffafa">
+
+                    <div class="center">
+                        <h2 style="color: black">
+                            <div class="padded_san"><%= a.title %></div>
+                        </h2>
+                        <div>
+                            By Hannah Knowles on <%= a.published_date.to_date.strftime("%B %d, %Y") %>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="center">
+                        <span class="underlined"><%= location %></span>
+                    </div>
+
+                    <div class="ribbon-wrapper-green"><div class="ribbon-green">Recent</div></div>
+
+                    <h4 class="padded_bot"><%= link_to "Read More", a.link, class: 'btn btn-sm btn-info', :target => '_blank' %></h4>
+
+                </div>
             </div>
-            <%= will_paginate @articles %>
+
+            <hr>
+
+
+
+
 
             <% @articles.each do |merc| %>
             <% picture = ''%>
+            <% location = '' %>
             <% if merc.location == 'merc'%>
                  <% picture = 'sanjose.png' %>
-            <% end %>
+                <% location = 'The Mercury News' %>
+
+        <% end %>
             <% if merc.location == 'daily'%>
                  <% picture = 'daily.png' %>
-            <% end %>
+                <% location = 'The Stanford Daily' %>
+
+        <% end %>
 
             <%= timeline_container("#{merc.title}", merc.published_date.to_date, picture) do %>
                             <div>
                                 By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>
                             </div>
-                <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info' %></h4>
+                             <hr>
+
+                              <div class="center">
+                                <span class="underlined"><%= location %></span>
+                            </div>
 
 
-                        <div class="padded_san">
-                               <%= image_tag "#{picture}", size: '500x200'%>
-                           </div>
+                    <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info', :target => '_blank' %></h4>
+
                 <% end %>
 
             <% end%>
-            <%= will_paginate @articles %>
+
+
+
 
         </div>
 
-    <div>
+    </div>
 

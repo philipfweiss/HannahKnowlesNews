@@ -45,10 +45,6 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
 
 h1 {
   font-size: 3em;
@@ -212,7 +208,6 @@ input {
 }
 
 body {
-  background: image-url('mainPattern1.svg');
 }
 
 .navbar {
@@ -226,7 +221,6 @@ h2 {
 }
 
 .cd-picture {
-  background-color: #d9d9d9 !important;
 }
 
 .padded_san {
@@ -236,4 +230,9 @@ h2 {
 
 .padded_bot {
   text-align: center;
+}
+
+.underlined {
+  font-size: 12px;
+  text-decoration: underline;
 }

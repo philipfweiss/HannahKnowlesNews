@@ -8,10 +8,7 @@ class StaticPagesController < ApplicationController
     end
     @articles = @articles.sort_by {|a| a.published_date.to_date}
     @articles.reverse!
-    @articles.each do |art|
-      puts art
-    end
-    @articles = @articles.paginate(:page => params[:page], :per_page => 10)
+
 
 
 
