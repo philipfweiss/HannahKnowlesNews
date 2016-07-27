@@ -32,8 +32,8 @@
             <div class="container" style="background-color: white; padding: 40px; border: 2px solid black; border-radius: 5px;">
                 <ul class="nav nav-tabs">
                     <li style="font-size: 20px; color: black;"class="active"><a data-toggle="tab" href="#home">Recent Article</a></li>
-                    <li style="font-size: 20px; color: black;"><a data-toggle="tab" href="#menu2">List of all articles</a></li>
                     <li style="font-size: 20px; color: black;"><a data-toggle="tab" href="#menu1">Sign up for email updates!</a></li>
+                    <li style="font-size: 20px; color: black;"><a data-toggle="tab" href="#menu2">List of all articles</a></li>
 
 
                 </ul>
@@ -64,6 +64,7 @@
                     <div id="menu1" class="tab-pane fade">
                         <div class="center" style="padding: 30px">
                             <h4 style="color:black">Get email updates when Hannah posts an article!</h4>
+                            <p>You will get an email every time that Hannah writes an article and posts it online - email weissp68@stanford.edu to cancel</p>
                             <%= form_for(@email) do |f| %>
                                 <%= f.label :email, style: "color: black; float: left;"%>
                                 <%= f.email_field :email, class: 'form-control' %>
