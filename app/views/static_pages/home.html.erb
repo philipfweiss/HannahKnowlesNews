@@ -74,6 +74,8 @@
                     <div id="menu2" class="tab-pane fade">
                         <div class="center" style="padding: 30px">
                             <% articles = 0%>
+                            <div><%= articles+=1 %> <%= link_to "#{a.title}", a.link %> </div>
+
                             <% @articles.each do |article|%>
                             <div><%= articles+=1 %> <%= link_to "#{article.title}", article.link %> </div>
                             <% end %>
