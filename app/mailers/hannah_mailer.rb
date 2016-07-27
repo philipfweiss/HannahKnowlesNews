@@ -7,4 +7,12 @@ class HannahMailer < ApplicationMailer
     @email = email
     mail(to: @email, subject: @title, link: @link)
   end
+
+  def signup_email (title, link, email)
+    @link = link
+    @title = "News By Hannah: " + title
+    @email = email
+    mail(to: @email, subject: @title, link: @link)
+
+  end
 end
