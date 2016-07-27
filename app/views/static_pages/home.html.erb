@@ -11,6 +11,7 @@
         <div class="jumbotron" style="background-color: #b3e9ff; border: 2px solid black">
 
             <% a = @articles.shift %>
+            <% articleCount = 0%>
 
             <% location = ''%>
             <% picture = ''%>
@@ -42,7 +43,7 @@
 
                         <div class="center">
                             <h2 style="color: black">
-                                <div class="padded_san"><%= a.title %></div>
+                                <div class="padded_san"> <%= articleCount+=1%> <%= a.title %></div>
                             </h2>
                             <div>
                                 By Hannah Knowles on <%= a.published_date.to_date.strftime("%B %d, %Y") %>
@@ -104,7 +105,7 @@
 
         <% end %>
 
-            <%= timeline_container("#{merc.title}", merc.published_date.to_date, picture) do %>
+            <%= timeline_container("#{articleCount+=1}. #{merc.title}", merc.published_date.to_date, picture) do %>
                             <div>
                                 By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>
                             </div>
