@@ -2,7 +2,7 @@ desc "This task is called by the Heroku scheduler add-on"
 task :update_feed => :environment do
 
   @merc = []
-  3.times do |x|
+  2.times do |x|
     merc = GoogleCustomSearchApi.search("Hannah Knowles Mercury News", :page => x )
     merc.items.each do |item|
       if !item.pagemap.nil? && item.pagemap.metatags[0].has_key?("startdate")
