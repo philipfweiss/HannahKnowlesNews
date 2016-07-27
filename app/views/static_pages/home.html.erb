@@ -28,7 +28,7 @@
 
 
 
-            <div class="container" style="background-color: white; padding: 10px; border: 2px solid black; border-radius: 5px;">
+            <div class="container" style="background-color: white; padding: 40px; border: 2px solid black; border-radius: 5px;">
                 <ul class="nav nav-tabs">
                     <li style="font-size: 20px; color: black;"class="active"><a data-toggle="tab" href="#home">Recent Article</a></li>
                     <li style="font-size: 20px; color: black;"><a data-toggle="tab" href="#menu1">Sign up for email updates!</a></li>
@@ -51,8 +51,10 @@
                             <span class="underlined"><%= location %></span>
                         </div>
 
-                        <h4 class="padded_bot"><%= link_to "Read More", a.link, class: 'btn btn-sm btn-info', :target => '_blank' %></h4>
-
+                        <h4 class="padded_bot"><%= link_to "Read More", a.link, class: 'btn btn-lg btn-info', :target => '_blank' %></h4>
+                        <div class="center" style="font-size: 15px">
+                            This article was published <%= distance_of_time_in_words(a.published_date.to_date, Time.now.to_date) %> ago.
+                        </div>
                     </div>
 
                     <div id="menu1" class="tab-pane fade">
@@ -62,7 +64,7 @@
                                 <%= f.label :email, style: "color: black; float: left;"%>
                                 <%= f.email_field :email, class: 'form-control' %>
 
-                                <%= f.submit "Get updates!", class: "btn btn-primary" %>
+                                <%= f.submit "Get updates!", class: "btn btn-info btn-lg" %>
                             <% end %>
                         </div>
                     </div>
@@ -100,7 +102,10 @@
                             </div>
 
 
-                    <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-sm btn-info', :target => '_blank' %></h4>
+                    <h4 class="padded_bot"><%= link_to "Read More", merc.link, class: 'btn btn-lg btn-info', :target => '_blank' %></h4>
+                    <div class="center" style="font-size: 15px">
+                        This article was published <%= distance_of_time_in_words(merc.published_date.to_date, Time.now.to_date) %> ago.
+                    </div>
 
                 <% end %>
 

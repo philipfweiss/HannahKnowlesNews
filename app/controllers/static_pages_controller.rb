@@ -13,14 +13,6 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def create
-    @email = User.new(email_params)
-    if @email.save
-      flash[:success] = "You have signed up to get alerts when Hannah publishes an article "
-      redirect_to root_path
-    else
-    end
-  end
 
   def help
   end
@@ -31,9 +23,4 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  private
-
-  def user_params
-    params.require(:email)
-  end
 end
