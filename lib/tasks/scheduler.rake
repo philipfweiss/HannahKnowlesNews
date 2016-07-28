@@ -47,7 +47,7 @@ task :update_feed => :environment do
 
       @emails = Email.all
       @emails.each do |email|
-        HannahMailer.news_email(entry.title, entry.link, email.email).deliver_now
+        HannahMailer.news_email(entry.title, entry.url, email.email).deliver_now
       end
 
     end
