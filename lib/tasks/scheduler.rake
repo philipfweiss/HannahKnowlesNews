@@ -20,7 +20,11 @@ task :update_feed => :environment do
           location: 'merc',
           link: item.link
       )
-      HannahMailer.news_email("New Article: #{item.pagemap.metatags[0]["og:title"]}", item.link, "philipfweiss@gmail.com").deliver_now
+
+      @emails = Email.all
+      @emails.each do |email|
+        HannahMailer.news_email("#{item.pagemap.metatags[0]["og:title"]}", item.link, email.email).deliver_now
+      end
 
     end
   end
@@ -43,7 +47,7 @@ task :update_feed => :environment do
 
       @emails = Email.all
       @emails.each do |email|
-        HannahMailer.news_email("#{item.pagemap.metatags[0]["og:title"]}", item.link, email.email).deliver_now
+        HannahMailer.news_email(entry.title, entry.link, email.email).deliver_now
       end
 
     end

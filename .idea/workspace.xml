@@ -51,8 +51,8 @@
       <file leaf-file-name="scheduler.rake" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/scheduler.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78479195">
-              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.63414633">
+              <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -984,12 +984,12 @@
       <workItem from="1469662020899" duration="655000" />
       <workItem from="1469662878323" duration="27000" />
       <workItem from="1469724943274" duration="15000" />
-      <workItem from="1469726852841" duration="272000" />
+      <workItem from="1469726852841" duration="719000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20172000" />
+    <option name="totallyTimeSpent" value="20619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="192" y="23" width="1241" height="820" extended-state="0" />
@@ -1416,8 +1416,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/scheduler.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78479195">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.63414633">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
           <folding />
         </state>
       </provider>
