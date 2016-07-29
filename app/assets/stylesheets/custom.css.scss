@@ -241,9 +241,7 @@ h2 {
   font-size: 50px !important;
   line-height: 75px !important;
   text-align: center !important;
-  color: rgba(144, 143, 197, 0.6) !important;
-  border-bottom: 1px solid black;
-
+  color: #d16370 !important;
 
 }
 
@@ -252,4 +250,22 @@ h2 {
 
   font-size: 16px;
   color: black;
+}
+
+.page-background {
+  background-color: #ffffff !important;
+  border-radius: 5px;
+}
+
+.flexed {
+  display: flex;
+  padding: 40px;
+}
+
+.cd-timeline-content {
+  border: 3px solid #d16370 !important;
+}
+
+.cd-date {
+  display: none !important;
 }

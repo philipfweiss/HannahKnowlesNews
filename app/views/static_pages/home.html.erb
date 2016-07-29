@@ -7,7 +7,7 @@
     </div>
         <div class="jumbotron" style="background-color: #fcfcfc !important">
 
-            <% a = @articles.shift %>
+            <% a = @articles[0] %>
             <% articleCount = 0%>
 
             <% location = ''%>
@@ -24,58 +24,31 @@
 
         <% end %>
 
-            <div class="container" style="padding: 40px; border-top: 2px solid black;border-bottom: 2px solid black;">
-                <div class="container col-md-6">
-                    <h1 class="header_font">News By Hannah</h1>
-                    <div class="main_font">
-                        Welcome to <b>News by Hannah!</b> This website crawls the internet every ~6 hours, looking for new articles
-                        by Hannah Knowles.
-
+            <div class="container">
+                <div class="col-md-6 flexed" style="align-items: center;" >
+                    <div>
+                        <h1 class="header_font">Hannah's Articles. </h1>
+                        <h2 class="center">Updated Live. </h2>
+                        <br>
+                        <br>
+                        <h5 class="center"> This page crawls the internet every 6 hours, looking for new articles by Hannah Knowles. The articles are stored in a database and archived.  </h5>
                         <br>
                         <br>
 
-                        The articles are stored in a database and archived.
 
-                        <br>
-                        <br>
-
-                        If you would like to get an email when Hannah publishes a new article, sign up with your email using the pane on the right.
                     </div>
 
                 </div>
-                <div class="container col-md-6">
+                <div class="col-md-6">
                     <ul class="nav nav-tabs">
-                        <li style="font-size: 12px; color: black;"class="active"><a data-toggle="tab" href="#home">Recent Article</a></li>
-                        <li style="font-size: 12px; color: black;"><a data-toggle="tab" href="#menu1">Sign up for email updates!</a></li>
+                        <li style="font-size: 12px; color: black;"class="active"><a data-toggle="tab" href="#menu1">Sign up for email updates!</a></li>
                         <li style="font-size: 12px; color: black;"><a data-toggle="tab" href="#menu2">List of all articles</a></li>
-
-
                     </ul>
 
                     <div class="tab-content">
-                        <div id="home" class="tab-pane fade in active">
 
-                            <div class="center">
-                                <h2 style="color: black">
-                                    <div class="padded_san"> <%= articleCount+=1%>. <%= a.title %></div>
-                                </h2>
-                                <div>
-                                    By Hannah Knowles on <%= a.published_date.to_date.strftime("%B %d, %Y") %>
-                                </div>
-                            </div>
 
-                            <hr>
-                            <div class="center">
-                                <span class="underlined"><%= location %></span>
-                            </div>
-
-                            <h4 class="padded_bot"><%= link_to "Read More", a.link, class: 'btn btn-lg btn-info', :target => '_blank' %></h4>
-                            <div class="center" style="font-size: 15px">
-                                This article was published <%= distance_of_time_in_words(a.published_date.to_date, Time.now.to_date) %> ago.
-                            </div>
-                        </div>
-
-                        <div id="menu1" class="tab-pane fade">
+                        <div id="menu1" class="tab-pane fade in active">
                             <div class="center" style="padding: 30px">
                                 <h3 style="color:black">Get email updates when Hannah posts an article!</h3>
                                 <h5>You will get an email every time that Hannah writes an article and posts it online - email weissp68@stanford.edu to cancel</h5>
@@ -93,12 +66,13 @@
                                 <div><%= articles+=1 %> <%= link_to "#{a.title}", a.link, :target => '_blank'%> </div>
 
                                 <% @articles.each do |article|%>
-                                <div><%= articles+=1 %> <%= link_to "#{article.title}", article.link, :target => '_blank' %> </div>
+                                    <div><%= articles+=1 %> <%= link_to "#{article.title}", article.link, :target => '_blank' %> </div>
                                 <% end %>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
@@ -108,7 +82,7 @@
 
 
 
-            <% @articles.each do |merc| %>
+    <% @articles.each do |merc| %>
             <% picture = ''%>
             <% location = '' %>
             <% if merc.location == 'merc'%>
@@ -121,7 +95,6 @@
                 <% location = 'The Stanford Daily' %>
 
         <% end %>
-
             <%= timeline_container("#{articleCount+=1}. #{merc.title}", merc.published_date.to_date, picture) do %>
                             <div>
                                 By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>
@@ -138,7 +111,7 @@
                         This article was published <%= distance_of_time_in_words(merc.published_date.to_date, Time.now.to_date) %> ago.
                     </div>
 
-                <% end %>
+            <% end %>
 
             <% end%>
 

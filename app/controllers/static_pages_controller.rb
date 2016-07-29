@@ -13,6 +13,9 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def landing
+  end
+
 
   def help
   end
