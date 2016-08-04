@@ -12,7 +12,7 @@ task :update_feed => :environment do
   end
 
   @merc.each do |item|
-    if Article.where(:title => item.pagemap.metatags[0]["og:title"]).blank?
+    if Article.where(:title => item.pagemap.metatags[0]["og:title"]).blank? && Article.where(:link => item.link).blank?
       Article.create!(
           title: item.pagemap.metatags[0]["og:title"],
           content: '',
