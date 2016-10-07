@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   get 'index' => 'users'
+  get '/.well-known/acme-challenge/:id' => 'static_pages#letsencrypt'
+  post '/.well-known/acme-challenge/:id' => 'static_pages#letsencrypt'
+
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
