@@ -20,6 +20,10 @@ gem 'web-console', group: :development
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-particles.js'
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
