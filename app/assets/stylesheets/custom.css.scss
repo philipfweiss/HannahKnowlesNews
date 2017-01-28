@@ -288,3 +288,18 @@ h2 {
   background-color: black;
 
 }
+
+body {
+  display: flex;
+}
+html,body { height:100%; }
+
+#particles-js{
+  background-color: black !important;
+  position:absolute;
+  top: 0;
+  align-items: stretch;
+  z-index: -99;
+  min-height: 100vh;
+  width:100%;
+}

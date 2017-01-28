@@ -8,14 +8,21 @@
   <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
-<body style="background-color: #000000; !important">
+
+<body style="">
     <%= render 'layouts/header' %>
     <div class="container">
-          <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>"><%= message %></div>
-          <% end %>
-          <%= yield %>
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
     </div>
+    <div id="particles-js">
+
+    </div>
+
+
+
 
 </body>
 </html>
