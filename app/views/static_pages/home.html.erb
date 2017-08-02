@@ -21,8 +21,11 @@
             <% if a.location == 'daily'%>
                 <% picture = 'daily.png' %>
                 <% location = 'The Stanford Daily' %>
-
         <% end %>
+            <% if a.location == 'sacbee'%>
+                <% picture = 'sacbee.jpg' %>
+                <% location = 'The Sacramento Bee' %>
+            <% end %>
 
             <div class="container" style="padding: 20px; border-radius: 10px;">
                 <div class="col-md-6 flexed" style="align-items: center;" >
@@ -84,12 +87,15 @@
                  <% picture = 'sanjose.png' %>
                 <% location = 'The Mercury News' %>
 
-        <% end %>
+             <% end %>
             <% if merc.location == 'daily'%>
                  <% picture = 'daily.png' %>
                 <% location = 'The Stanford Daily' %>
-
-        <% end %>
+              <% end %>
+                <% if merc.location == 'sacbee'%>
+                    <% picture = 'sacbee.jpg' %>
+                    <% location = 'The Sacramento Bee' %>
+                <% end %>
             <%= timeline_container("#{articleCount+=1}. #{merc.title}", merc.published_date.to_date, picture) do %>
                             <div>
                                 By Hannah Knowles on <%= merc.published_date.to_date.strftime("%B %d, %Y") %>

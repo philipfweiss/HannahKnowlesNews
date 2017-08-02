@@ -29,6 +29,34 @@ task :update_feed => :environment do
     end
   end
 
+  ######
+
+  @sac = []
+  2.times do |x|
+    sac = GoogleCustomSearchApi.search("Hannah Knowles Sac Bee", :page => x )
+    sac.items.each do |item|
+      if !item.pagemap.nil?
+        @sac.push item
+      end
+    end
+
+    @sac.each do |item|
+      if Article.where(:title => item.pagemap.metatags[0]["og:title"]).blank? && Article.where(:link => item.link).blank?
+        Article.create!(
+            title: item.pagemap.metatags[0]["og:title"],
+            content: '',
+            published_date: item.pagemap.metatags[0].startdate,
+            location: 'sacbee',
+            link: item.link
+        )
+
+        @emails = Email.all
+        @emails.each do |email|
+          HannahMailer.news_email("#{item.pagemap.metatags[0]["og:title"]}", item.link, email.email).deliver_now
+        end
+
+      end
+    end
 
   ######
 
@@ -54,4 +82,5 @@ task :update_feed => :environment do
 
   end
 
+  end
 end
